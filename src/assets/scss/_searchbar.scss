@@ -1,0 +1,11 @@
+@import '_custom';
+
+#search-dropdown {
+    top: 0;
+    cursor: pointer;
+}
+
+#search-dropdown-item:hover {
+    color: white;
+    background-color: $primary;
+}
