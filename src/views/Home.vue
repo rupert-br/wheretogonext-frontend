@@ -64,7 +64,7 @@
               <td>
                 <div class="row">
                   <div class="col">
-                    <div>Current</div>
+                    <div>Today</div>
                     <div>
                       <img :src="`http://openweathermap.org/img/wn/${crag.weather.daily[0].weather[0].icon}@2x.png`" alt="weather icon">
                     </div>
