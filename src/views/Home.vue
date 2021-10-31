@@ -35,7 +35,7 @@
           </button>
         </div>
 
-        <label for="radius" class="form-label">Radius: <span id="radius-value">{{ this.radius }}</span> km</label>
+        <label for="radius" class="mt-4 form-label">Radius: <span id="radius-value">{{ this.radius }}</span> km</label>
         <input autocomplete="off" v-model="radius" type="range" class="form-range px-1" min="0" max="300" step="1" id="radius">
         <button @click="getCrags" class="btn btn-primary mt-2">
           Search crags
@@ -209,18 +209,22 @@ export default {
 
       return d
     },
-    getPosition () {
+    getCoordinates () {
+      return new Promise(function (resolve, reject) {
+        navigator.geolocation.getCurrentPosition(resolve, reject)
+      })
+    },
+    async getPosition () {
       // Get current GPS location
       const coordinates = { lat: '', lon: '' }
-      navigator.geolocation.getCurrentPosition(function (position) {
-        coordinates.lat = position.coords.latitude
-        coordinates.lon = position.coords.longitude
-      })
+      const position = await this.getCoordinates()
+      coordinates.lat = position.coords.latitude
+      coordinates.lon = position.coords.longitude
       this.currentPosition = coordinates
+
       axios
         .get(`/get_city_by_posititon/${coordinates.lat}/${coordinates.lon}`)
         .then(response => {
-          console.log(response.data)
           this.searchStr = response.data.display_name
         })
     },
