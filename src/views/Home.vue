@@ -68,16 +68,16 @@
                     <div>
                       <img :src="`http://openweathermap.org/img/wn/${crag.weather.daily[0].weather[0].icon}@2x.png`" alt="weather icon">
                     </div>
-                    <div class="fw-lighter">
+                    <div class="fw-light">
                       Temperature min {{ crag.weather.daily[0].temp.min.toFixed(0) }} °C / max {{ crag.weather.daily[0].temp.max.toFixed(0) }} °C
                     </div>
-                    <div class="fw-lighter">
+                    <div class="fw-light">
                       Rain: {{ (crag.weather.daily[0].pop*100).toFixed(0) }} % / {{ crag.weather.daily[0].rain }} L
                     </div>
-                    <div class="fw-lighter">
+                    <div class="fw-light">
                       Humidity: {{ crag.weather.daily[0].humidity.toFixed(0) }} %
                     </div>
-                    <div class="fw-lighter">
+                    <div class="fw-light">
                       Wind speed: {{ (crag.weather.daily[0].wind_speed*2.6).toFixed(1) }} km/h
                     </div>
                   </div>
@@ -86,16 +86,16 @@
                     <div>
                       <img :src="`http://openweathermap.org/img/wn/${crag.weather.daily[1].weather[0].icon}@2x.png`" alt="weather icon">
                     </div>
-                    <div class="fw-lighter">
+                    <div class="fw-light">
                       Temperature min {{ crag.weather.daily[1].temp.min.toFixed(0) }} °C / max {{ crag.weather.daily[1].temp.max.toFixed(0) }} °C
                     </div>
-                    <div class="fw-lighter">
+                    <div class="fw-light">
                       Rain: {{ (crag.weather.daily[1].pop*100).toFixed(0) }} % / {{ crag.weather.daily[1].rain }} L
                     </div>
-                    <div class="fw-lighter">
+                    <div class="fw-light">
                       Humidity: {{ crag.weather.daily[1].humidity.toFixed(0) }} %
                     </div>
-                    <div class="fw-lighter">
+                    <div class="fw-light">
                       Wind speed: {{ (crag.weather.daily[1].wind_speed*2.6).toFixed(1) }} km/h
                     </div>
                   </div>
@@ -104,16 +104,16 @@
                     <div>
                       <img :src="`http://openweathermap.org/img/wn/${crag.weather.daily[2].weather[0].icon}@2x.png`" alt="weather icon">
                     </div>
-                    <div class="fw-lighter">
+                    <div class="fw-light">
                       Temperature min {{ crag.weather.daily[2].temp.min.toFixed(0) }} °C / max {{ crag.weather.daily[2].temp.max.toFixed(0) }} °C
                     </div>
-                    <div class="fw-lighter">
+                    <div class="fw-light">
                       Rain: {{ (crag.weather.daily[2].pop*100).toFixed(0) }} % / {{ crag.weather.daily[2].rain }} L
                     </div>
-                    <div class="fw-lighter">
+                    <div class="fw-light">
                       Humidity: {{ crag.weather.daily[2].humidity.toFixed(0) }} %
                     </div>
-                    <div class="fw-lighter">
+                    <div class="fw-light">
                       Wind speed: {{ (crag.weather.daily[2].wind_speed*2.6).toFixed(1) }} km/h
                     </div>
                   </div>
@@ -122,16 +122,16 @@
                     <div>
                       <img :src="`http://openweathermap.org/img/wn/${crag.weather.daily[3].weather[0].icon}@2x.png`" alt="weather icon">
                     </div>
-                    <div class="fw-lighter">
+                    <div class="fw-light">
                       Temperature min {{ crag.weather.daily[3].temp.min.toFixed(0) }} °C / max {{ crag.weather.daily[3].temp.max.toFixed(0) }} °C
                     </div>
-                    <div class="fw-lighter">
+                    <div class="fw-light">
                       Rain: {{ (crag.weather.daily[3].pop*100).toFixed(0) }} % / {{ crag.weather.daily[3].rain }} L
                     </div>
-                    <div class="fw-lighter">
+                    <div class="fw-light">
                       Humidity: {{ crag.weather.daily[3].humidity.toFixed(0) }} %
                     </div>
-                    <div class="fw-lighter">
+                    <div class="fw-light">
                       Wind speed: {{ (crag.weather.daily[3].wind_speed*2.6).toFixed(1) }} km/h
                     </div>
                   </div>
