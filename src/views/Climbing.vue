@@ -82,7 +82,7 @@
                     </div>
                   </div>
                   <div class="col">
-                    <div>+1 day</div>
+                    <div>{{ this.forecastDates[0] }}</div>
                     <div>
                       <img :src="`http://openweathermap.org/img/wn/${crag.weather.daily[1].weather[0].icon}@2x.png`" alt="weather icon">
                     </div>
@@ -100,7 +100,7 @@
                     </div>
                   </div>
                   <div class="col">
-                    <div>+2 days</div>
+                    <div>{{ this.forecastDates[1] }}</div>
                     <div>
                       <img :src="`http://openweathermap.org/img/wn/${crag.weather.daily[2].weather[0].icon}@2x.png`" alt="weather icon">
                     </div>
@@ -118,7 +118,7 @@
                     </div>
                   </div>
                   <div class="col">
-                    <div>+3 days</div>
+                    <div>{{ this.forecastDates[2] }}</div>
                     <div>
                       <img :src="`http://openweathermap.org/img/wn/${crag.weather.daily[3].weather[0].icon}@2x.png`" alt="weather icon">
                     </div>
@@ -162,7 +162,8 @@ export default {
       currentPosition: { lat: '', lon: '' },
       showSearchBox: true,
       searchStr: '',
-      locations: []
+      locations: [],
+      forecastDates: []
     }
   },
   methods: {
@@ -188,7 +189,6 @@ export default {
             })
         }
       })
-      console.log(this.nearCrags)
     },
     toggleSearchBox () {
       this.showSearchBox = !this.showSearchBox
@@ -247,6 +247,14 @@ export default {
       this.currentPosition = coordinates
       this.searchStr = value.display_name
       this.locations = []
+    },
+    getDateTimes (timeperiod) {
+      for (let i = 1; i <= timeperiod; i++) {
+        const date = new Date()
+        const finalDate = new Date(date)
+        finalDate.setDate(date.getDate() + i)
+        this.forecastDates.push(finalDate.toLocaleDateString())
+      }
     }
   },
   computed: {
@@ -256,6 +264,7 @@ export default {
   },
   created () {
     document.title = 'Where to go next?'
+    this.getDateTimes(3)
   }
 }
 </script>
