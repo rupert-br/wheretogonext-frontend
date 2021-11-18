@@ -60,6 +60,7 @@
               <td>
                 <a :href="`http://8a.nu${crag.href}`">{{ crag.Crag }}</a>
                 <div class="fw-lighter">{{ crag.distance.toFixed(1) }} km away</div>
+                <div class="fw-lighter">{{ crag.rating }}</div>
               </td>
               <td>
                 <div class="row">
@@ -180,7 +181,7 @@ export default {
 
               // Get Ranking from API
               axios
-                .get(`/get_rating?distance=${distance}&pop=${elem.weather.daily[0].pop}&temp=${elem.weather.daily[0].temp.max}&wind=${elem.weather.daily[0].wind_speed}&humidity=${elem.weather.daily[0].humidity}`)
+                .get(`/get_climbing_rating?distance=${distance}&pop=${elem.weather.daily[0].pop}&temp=${elem.weather.daily[0].temp.max}&wind=${elem.weather.daily[0].wind_speed}&humidity=${elem.weather.daily[0].humidity}`)
                 .then(response => {
                   elem.rating = response.data
                 })

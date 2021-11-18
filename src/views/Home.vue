@@ -7,5 +7,9 @@
 </template>
 
 <script>
-
+export default {
+  created () {
+    document.title = 'Where to go next?'
+  }
+}
 </script>
