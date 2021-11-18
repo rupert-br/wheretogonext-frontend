@@ -59,8 +59,7 @@
             <tr v-for="crag in orderedCrags" :key="crag.Crag">
               <td>
                 <a :href="`http://8a.nu${crag.href}`">{{ crag.Crag }}</a>
-                <div class="fw-lighter">{{ crag.distance.toFixed(1) }} km away</div>
-                <div class="fw-lighter">{{ crag.rating }}</div>
+                <div class="fw-light">{{ crag.distance.toFixed(1) }} km away</div>
               </td>
               <td>
                 <div class="row">
